@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    
+<!-- Add Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .navbar-item-active {
+            background-color: #e67409;
+        }
+
+        /* Sidebar styling for mobile menu */
+        #mobileMenu {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Hide off-screen initially */
+            height: 100%;
+            width: 250px;
+            background-color: #ffffff; /* Set background to white */
+            padding-top: 20px;
+            transition: left 0.3s ease;
+            z-index: 20;
+        }
+
+        #mobileMenu.active {
+            left: 0; /* Show the sidebar when active */
+        }
+
+        #mobileMenu a {
+            color: #333; /* Dark text color for better readability */
+            padding: 15px 20px;
+            display: block;
+            font-size: 18px;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd; /* Add subtle dividers between links */
+        }
+
+        #mobileMenu a:hover {
+            background-color: #e67409;
+            color: white;
+        }
+
+        .hamburger.active + #mobileMenu {
+            left: 0; /* Show sidebar when hamburger is active */
+        }
+
+        /* Make sure the title in the sidebar is visible */
+        #mobileMenu .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- Navbar -->
+<nav class="sticky top-4 left-1/12 right-1/12 z-10">
+    <div class="bg-white text-black p-4 max-w-screen-xl mx-auto flex justify-between items-center rounded-lg shadow-md">
+        <a href="#" class="text-2xl font-bold">My Portfolio</a>
+        <div class="space-x-6 hidden md:flex">
+            <a href="#about" class="navbar-item hover:bg-orange-500 hover:text-white px-3 py-2 rounded">About</a>
+            <a href="#projects" class="navbar-item hover:bg-orange-500 hover:text-white px-3 py-2 rounded">Projects</a>
+            <a href="#education-experience" class="navbar-item hover:bg-orange-500 hover:text-white px-3 py-2 rounded">Education & Experience</a>
+            <a href="#contact" class="navbar-item hover:bg-orange-500 hover:text-white px-3 py-2 rounded">Contact</a>
+            <a href="#get-in-touch" class="navbar-item hover:bg-orange-500 hover:text-white px-3 py-2 rounded">Get In Touch</a>
+        </div>
+        <button id="hamburger" class="block md:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+
+<!-- Mobile Menu (Sidebar) -->
+<div id="mobileMenu" class="bg-white text-black space-y-4 p-4">
+    <div class="logo">My Portfolio</div> <!-- Add the logo here in the sidebar -->
+    <a href="#about" class="navbar-item block">About</a>
+    <a href="#projects" class="navbar-item block">Projects</a>
+    <a href="#education-experience" class="navbar-item block">Education & Experience</a>
+    <a href="#contact" class="navbar-item block">Contact</a>
+    <a href="#get-in-touch" class="navbar-item block">Get In Touch</a>
+</div>
+
+
+<!-- Hero Section -->
+<section class="relative py-32 bg-gradient-to-r from-orange-100 to-orange-300 text-gray-800">
+    <div class="max-w-screen-xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+        <!-- Text Content -->
+        <div class="w-full md:w-1/2 text-left">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-800" style="font-family: 'Rouge Script', cursive;">
+                Hello, I'm <span class="text-orange-600">Sanjana Gharat</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl font-medium text-gray-700 font-roboto">
+                A Computer Science Engineering student with a passion for graphic design, web development, and UI/UX.
+            </p>
+            <p class="mt-4 text-lg md:text-xl text-gray-700 font-roboto max-w-2xl">
+                I specialize in creating intuitive websites that prioritize user experience. Proficient in HTML, CSS, JavaScript, and more, I blend creativity with technical expertise to deliver seamless solutions.
+            </p>
+            <div class="mt-8 flex justify-start">
+                <a href="#projects" class="bg-orange-600 hover:bg-orange-700 text-white py-4 px-8 rounded-full text-lg font-semibold transition duration-300">
+                    See My Work
+                </a>
+            </div>
+        </div>
+        
+        <!-- Image Content -->
+        <div class="w-full md:w-1/3 mt-10 md:mt-0 flex justify-center flex-col items-center">
+            <img src="me.jpg" alt="Sanjana Gharat" class="rounded-full shadow-lg w-72 h-72 object-cover" />
+        </div>
+    </div>
+</section>
+<!-- Social Icons Section -->
+<section class="bg-gray-100 py-8">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-semibold text-gray-800">Connect with Me</h2>
+        <div class="mt-4 flex justify-center space-x-6">
+            <!-- Social Icons -->
+            <a href="https://facebook.com" target="_blank" class="text-gray-800 hover:text-blue-600 transition duration-300">
+                <i class="fab fa-facebook-f text-2xl"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="text-gray-800 hover:text-blue-400 transition duration-300">
+                <i class="fab fa-twitter text-2xl"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="text-gray-800 hover:text-blue-700 transition duration-300">
+                <i class="fab fa-linkedin-in text-2xl"></i>
+            </a>
+            <a href="https://github.com" target="_blank" class="text-gray-800 hover:text-black transition duration-300">
+                <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="text-gray-800 hover:text-pink-600 transition duration-300">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+            <a href="mailto:your.email@example.com" class="text-gray-800 hover:text-orange-600 transition duration-300">
+                <i class="fas fa-envelope text-2xl"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-100">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-16">
+        <h2 class="text-4xl font-bold text-gray-800 text-center mb-10">About Me</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <!-- Left: About Details -->
+            <div>
+                <h3 class="text-2xl font-semibold text-orange-600">I'm Sanjana Gharat, a Web Developer</h3>
+                
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+                    As a dedicated VIT student, I bring a dynamic blend of creativity, strong communication skills, and expertise in 
+                    graphic design, UI/UX, and coding (C++, Python, Java). I excel in crafting engaging designs, intuitive user interfaces, 
+                    and innovative software solutions.
+                </p>
+
+                <!-- Personal Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg text-gray-700 mt-6">
+                    <p><strong>Birthday:</strong> 03 Dec 2004</p>
+                    <p><strong>Age:</strong> 20</p>
+                    <p><strong>Website:</strong> NIL</p>
+                    <p><strong>Email:</strong> sanjanagharat16@gmail.com</p>
+                    <p><strong>Degree:</strong> B.Tech - CSE Core</p>
+                    <p><strong>Phone:</strong> 9619750636</p>
+                    <p><strong>City:</strong> Navi Mumbai</p>
+                    <p><strong>Freelance:</strong> Available</p>
+                </div>
+
+                <!-- Buttons -->
+                <div class="mt-6 flex space-x-4 justify-center md:justify-start">
+                    <a href="your-cv-link.pdf" class="bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded-full text-lg font-semibold transition duration-300">
+                        Download CV
+                    </a>
+                    <a href="#contact" class="bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded-full text-lg font-semibold transition duration-300">
+                        Hire Me
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Skills -->
+            <div>
+                <h3 class="text-3xl font-semibold text-gray-800">Skills</h3>
+                <div class="mt-6 space-y-4">
+                    <div class="text-gray-800 font-medium">CSS <span class="float-right">76%</span></div>
+                    <div class="w-full bg-gray-300 h-3 rounded-full">
+                        <div class="bg-orange-600 h-3 rounded-full" style="width: 76%;"></div>
+                    </div>
+
+                    <div class="text-gray-800 font-medium">HTML <span class="float-right">76%</span></div>
+                    <div class="w-full bg-gray-300 h-3 rounded-full">
+                        <div class="bg-orange-600 h-3 rounded-full" style="width: 76%;"></div>
+                    </div>
+
+                    <div class="text-gray-800 font-medium">JavaScript <span class="float-right">80%</span></div>
+                    <div class="w-full bg-gray-300 h-3 rounded-full">
+                        <div class="bg-orange-600 h-3 rounded-full" style="width: 80%;"></div>
+                    </div>
+
+                    <div class="text-gray-800 font-medium">Java <span class="float-right">85%</span></div>
+                    <div class="w-full bg-gray-300 h-3 rounded-full">
+                        <div class="bg-orange-600 h-3 rounded-full" style="width: 85%;"></div>
+                    </div>
+
+                    <div class="text-gray-800 font-medium">Python <span class="float-right">87%</span></div>
+                    <div class="w-full bg-gray-300 h-3 rounded-full">
+                        <div class="bg-orange-600 h-3 rounded-full" style="width: 87%;"></div>
+                    </div>
+
+                    <div class="text-gray-800 font-medium">C++ <span class="float-right">90%</span></div>
+                    <div class="w-full bg-gray-300 h-3 rounded-full">
+                        <div class="bg-orange-600 h-3 rounded-full" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Education & Experience Section -->
+<section id="education-experience" class="py-20 bg-gray-100">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-12">
+        <h2 class="text-5xl font-bold text-gray-800 text-center mb-12">Education & Experience</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Education Section -->
+            <div>
+                <h3 class="text-3xl font-semibold text-orange-600 mb-8">🎓 Education</h3>
+
+                <div class="relative border-l-4 border-orange-600 pl-6 space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h4 class="text-xl font-semibold text-gray-800">St. Mary's JNPT School</h4>
+                        <p class="text-gray-500">📅 2007 - 2020</p>
+                        <p class="text-gray-700 mt-2"><strong>Grade:</strong> 92%</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h4 class="text-xl font-semibold text-gray-800">Pace Jr. Science College</h4>
+                        <p class="text-gray-500">📅 2020 - 2022</p>
+                        <p class="text-gray-700 mt-2"><strong>Grade:</strong> 88.67%</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h4 class="text-xl font-semibold text-gray-800">VIT Bhopal University</h4>
+                        <p class="text-gray-500">📅 2022 - 2026</p>
+                        <p class="text-gray-700 mt-2"><strong>Degree:</strong> B.Tech in Computer Science</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div>
+                <h3 class="text-3xl font-semibold text-orange-600 mb-8">💼 Experience</h3>
+
+                <div class="relative border-l-4 border-orange-600 pl-6 space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h4 class="text-xl font-semibold text-gray-800">Content Developer</h4>
+                        <p class="text-gray-500">📅 May 2023 - May 2023</p>
+                        <p class="text-gray-700"><strong>Marpu Foundation (NGO)</strong></p>
+                        <p class="text-gray-700 mt-2">Internship focused on content creation and development.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h4 class="text-xl font-semibold text-gray-800">Core Member (Design Team)</h4>
+                        <p class="text-gray-500">📅 2024 - Present</p>
+                        <p class="text-gray-700"><strong>Open Source Club</strong></p>
+                        <p class="text-gray-700 mt-2">Contributing to UI/UX and graphic design for open-source projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-gray-100">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+        <h2 class="text-5xl font-extrabold text-gray-800 mb-10">🚀 My Projects</h2>
+        <p class="text-lg text-gray-700 mb-12">Here are some of the projects I have worked on. I bring creativity and technical expertise to every project, ensuring that each one is innovative, functional, and beautiful.</p>
+
+        <!-- Project Cards Container -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-500">
+                <img src="project-image-1.jpg" alt="Project 1" class="w-full h-48 object-cover"/>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Project Name 1</h3>
+                    <p class="mt-4 text-gray-600">A brief description of the project goes here. Highlight its features, technologies used, and what makes it unique.</p>
+                    <div class="mt-4">
+                        <a href="#" class="inline-block bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded-full text-lg font-semibold transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-500">
+                <img src="project-image-2.jpg" alt="Project 2" class="w-full h-48 object-cover"/>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Project Name 2</h3>
+                    <p class="mt-4 text-gray-600">This project focuses on [insert what the project is about]. With a combination of [technologies used], it achieves [outcome].</p>
+                    <div class="mt-4">
+                        <a href="#" class="inline-block bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded-full text-lg font-semibold transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-500">
+                <img src="project-image-3.jpg" alt="Project 3" class="w-full h-48 object-cover"/>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Project Name 3</h3>
+                    <p class="mt-4 text-gray-600">An in-depth look into how this project came to life and the challenges I overcame. [Talk about tech stack or innovation].</p>
+                    <div class="mt-4">
+                        <a href="#" class="inline-block bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded-full text-lg font-semibold transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More projects can be added similarly... -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-100">
+    <div class="max-w-screen-lg mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-5xl font-bold text-gray-800 mb-12">📩 Contact Me</h2>
+
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+            Feel free to reach out for collaborations or inquiries. I’d love to connect!
+        </p>
+
+        <!-- Contact Details Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+            <!-- Phone -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                <i class="fas fa-phone-alt text-orange-600 text-4xl mb-3"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Call Me</h3>
+                <p class="text-gray-600 mt-2">📞 9619750636</p>
+            </div>
+
+            <!-- Email -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                <i class="fas fa-envelope text-orange-600 text-4xl mb-3"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Email</h3>
+                <p class="text-gray-600 mt-2">
+                    📩 <a href="mailto:sanjanagharat16@gmail.com" class="text-orange-600 hover:underline">sanjanagharat16@gmail.com</a>
+                </p>
+            </div>
+
+            <!-- Website -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                <i class="fas fa-globe text-orange-600 text-4xl mb-3"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Website</h3>
+                <p class="text-gray-600 mt-2">🌐 --</p>
+            </div>
+
+            <!-- Location -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                <i class="fas fa-map-marker-alt text-orange-600 text-4xl mb-3"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Location</h3>
+                <p class="text-gray-600 mt-2">📍 Navi Mumbai</p>
+            </div>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <div class="mt-12">
+            <a href="mailto:sanjanagharat16@gmail.com" class="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-full text-lg font-semibold transition duration-300">
+                📧 Get In Touch
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Get In Touch Section -->
+<section id="get-in-touch" class="py-20 bg-gray-100">
+    <div class="max-w-screen-lg mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-5xl font-bold text-gray-800 mb-10">📬 Get In Touch</h2>
+
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+            Have a question or want to collaborate? Fill out the form below, and I’ll get back to you soon! 🚀
+        </p>
+
+        <!-- Contact Form -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="max-w-2xl mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
+            <!-- Hidden Access Key -->
+            <input type="hidden" name="access_key" value="684f129c-cf7a-4a38-8d86-221a8778a562">
+
+            <!-- Name -->
+            <div class="mb-6">
+                <label for="name" class="block text-gray-700 text-lg font-semibold mb-2">Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-6">
+                <label for="email" class="block text-gray-700 text-lg font-semibold mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Subject -->
+            <div class="mb-6">
+                <label for="subject" class="block text-gray-700 text-lg font-semibold mb-2">Subject</label>
+                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Enter subject" required>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-6">
+                <label for="message" class="block text-gray-700 text-lg font-semibold mb-2">Your Message</label>
+                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Type your message here..." required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-lg text-lg font-semibold transition duration-300">
+                🚀 Submit Form
+            </button>
+        </form>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white text-center py-4">
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navbarItems = document.querySelectorAll('.navbar-item');
+
+    // Toggle sidebar on hamburger click
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active'); // Toggle visibility of sidebar
+    });
+
+    // Close the sidebar if the user clicks outside the sidebar
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            mobileMenu.classList.remove('active'); // Close sidebar if click is outside
+        }
+    });
+
+    // Highlight active navbar item on scroll
+    window.addEventListener('scroll', () => {
+        let scrollPosition = window.scrollY;
+
+        navbarItems.forEach(item => {
+            const section = document.querySelector(item.getAttribute('href'));
+            const sectionTop = section.offsetTop - 100;
+            const sectionBottom = section.offsetTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                item.classList.add('navbar-item-active');
+            } else {
+                item.classList.remove('navbar-item-active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
